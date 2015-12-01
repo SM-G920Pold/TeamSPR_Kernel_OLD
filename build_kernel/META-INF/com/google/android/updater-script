@@ -1,0 +1,14 @@
+ui_print("");
+ui_print("************************************");
+ui_print("*          TeamSPR Kernel          *");
+ui_print("*        SM-G920P Exynos7420       *");
+ui_print("*          by tvm2487              *");
+ui_print("************************************");
+ui_print("");
+ui_print("Extracting Kernel files...");
+package_extract_file("boot.img", "/dev/block/platform/15570000.ufs/by-name/BOOT");
+ui_print("");
+ui_print("************************************");
+ui_print("*           TeamSPR Kernel         *");
+ui_print("*      Installation Completed!     *");
+ui_print("************************************");

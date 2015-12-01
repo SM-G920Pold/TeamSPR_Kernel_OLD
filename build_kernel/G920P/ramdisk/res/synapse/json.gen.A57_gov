@@ -1,0 +1,62 @@
+#!/sbin/busybox sh
+
+cat << CTAG
+{
+    name:"A57 GOV",
+    elements:[
+	{ SPane:{
+		title:"A57 Governor tunables",
+		description:"The various configuration items which are governor-dependent."
+	}},
+	{ SSpacer:{
+		height:1
+	}},
+	{ STreeDescriptor:{
+		path:"/sys/devices/system/cpu/cpu4/cpufreq",
+		generic: {
+			directory: {
+				STreeDescriptor:{
+					generic: {
+						directory: {},
+						element: {
+							SGeneric: { title:"@BASENAME" }
+						}
+					},
+					exclude: [
+						"above_hispeed_delay",
+						"boostpulse",
+						"cpu_util",
+						"enforced_mode",
+						"go_hispeed_load",
+						"hispeed_freq",
+						"mode",
+						"sampling_rate_min",
+						"single_cluster0_min_freq",
+						"target_loads"
+					]
+				},
+			}
+		},
+		exclude: [
+			"affected_cpus",
+			"cpuinfo_cur_freq",
+			"cpuinfo_max_freq",
+			"cpuinfo_min_freq",
+			"cpuinfo_transition_latency",
+			"related_cpus",
+			"scaling_available_governors",
+			"scaling_cur_freq",
+			"scaling_driver",
+			"scaling_governor",
+			"scaling_max_freq",
+			"scaling_min_freq",
+			"scaling_setspeed",
+			"stats"
+		]
+	}},
+	{ SSpacer:{
+		height:1
+	}},
+    ]
+}
+CTAG

@@ -12,6 +12,7 @@ export bldblu=${txtbld}$(tput setaf 4) #  blue
 export bldcya=${txtbld}$(tput setaf 6) #  cyan
 export txtrst=$(tput sgr0)             #  Reset
 
+
 # check if ccache installed, if not install
 if [ ! -e /usr/bin/ccache ]; then
 	echo "You must install 'ccache' to continue.";
@@ -25,6 +26,7 @@ if [ ! -e /usr/bin/xmllint ]; then
 fi
 
 echo "${bldcya}***** Clean up Environment before compile *****${txtrst}";
+
 
 # Make clean source
 read -t 5 -p "Make clean source, 5sec timeout (y/n)?";
@@ -40,8 +42,10 @@ if [ "$REPLY" == "y" ]; then
 ccache -C;
 fi;
 
+
 TARGET=$1
 if [ "$TARGET" != "" ]; then
+	echo
         echo "Starting your build for $TARGET"
 else
         echo ""
@@ -50,12 +54,18 @@ else
         exit 1
 fi
 
+
 # location
 	export KERNELDIR=`readlink -f .`;
 
-# kernel
+
+# set build variables
+BK=build_kernel
+export KCONFIG_NOTIMESTAMP=true
 export ARCH=arm64;
 export SUB_ARCH=arm64;
+
+# SM-G920P
 if [ "$TARGET" = "G920P" ] ; then
 export KERNEL_CONFIG="exynos7420-zerofltespr_defconfig";
 fi
@@ -64,8 +74,10 @@ fi
 export USER=`whoami`;
 export TMPFILE=`mktemp -t`;
 
+
 # system compiler
 export CROSS_COMPILE=/home/buildserver/android/toolchains/aarch64-linux-android-4.9-kernel/bin/aarch64-linux-android-
+
 
 # CPU Core
 export NUMBEROFCPUS=`grep 'processor' /proc/cpuinfo | wc -l`;
