@@ -15,6 +15,11 @@
 
 #include "ssp_iio.h"
 
+#include <linux/moduleparam.h>
+
+static int wl_ssp = 3;
+module_param(wl_ssp, int, 0644);
+
 static void init_sensorlist(struct ssp_data *data)
 {
 	char name[SENSOR_MAX][SENSOR_NAME_MAX_LEN] = SENSOR_NAME;
