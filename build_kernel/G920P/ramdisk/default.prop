@@ -14,7 +14,7 @@ persist.cne.feature=0
 persist.radio.lte_vrte_ltd=1
 persist.security.ams.enforcing=0
 ro.secure=0
-ro.allow.mock.location=0
+ro.allow.mock.location=1
 ro.debuggable=1
 ro.adb.secure=0
 ro.config.tima=0
@@ -28,4 +28,21 @@ dalvik.vm.dex2oat-Xmx=512m
 dalvik.vm.image-dex2oat-Xms=64m
 dalvik.vm.image-dex2oat-Xmx=64m
 ro.dalvik.vm.native.bridge=0
+
+# SELinux / KNOX
+ro.securestorage.knox=false
+ro.build.selinux=0
+ro.config.tima=0
+ro.config.rkp=false
+ro.config.kap_default_on=false
+
+# Keep WIFI settings on flash/reboot
+ro.securestorage.support=false
+
+# Screen mirroring / AllShare Cast fix
+wlan.wfd.hdcp=disable
+
+# RAM Management (experimental)
+ro.config.fha_enable=true
+ro.sys.fw.use_trim_settings=true
 
