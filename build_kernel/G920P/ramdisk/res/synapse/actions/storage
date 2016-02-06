@@ -1,4 +1,5 @@
 # By UpInTheAir for SkyHigh kernels
+# Modified by tvm2487 for TeamSPR Kernel
 
 BB=/sbin/busybox;
 
@@ -8,7 +9,7 @@ fi;
 
 case $1 in
 usb_mode)
-  P=/res/synapse/SkyHigh/mass_storage
+  P=/res/synapse/TeamSPR/mass_storage
   if [ ! -z "$2" ]; then
   if [ "$2" == DEFAULT ]; then
     echo 0 > $P

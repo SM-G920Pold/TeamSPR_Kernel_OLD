@@ -9,9 +9,9 @@ mount -o remount,rw /system /system
 #
 # Setup for Cron Task
 #
-if [ ! -d /data/.SkyHigh ]; then
-	$BB mkdir -p /data/.SkyHigh
-	$BB chmod -R 0777 /.SkyHigh/
+if [ ! -d /data/.TeamSPR ]; then
+	$BB mkdir -p /data/.TeamSPR
+	$BB chmod -R 0777 /.TeamSPR/
 fi;
 # Copy Cron files
 $BB cp -a /res/crontab/ /data/
@@ -141,12 +141,12 @@ mount -o mode=0777,gid=1000 -t tmpfs tmpfs /mnt/ntfs
 #
 # Kernel custom test
 #
-if [ -e /data/.SkyHigh_test.log ]; then
-rm /data/.SkyHigh_test.log
+if [ -e /data/.TeamSPR_test.log ]; then
+rm /data/.TeamSPR_test.log
 fi
 
-echo  Kernel script is working !!! >> /data/.SkyHigh_test.log
-echo "excecuted on $(date +"%d-%m-%Y %r" )" >> /data/.SkyHigh_test.log
+echo  Kernel script is working !!! >> /data/.TeamSPR_test.log
+echo "excecuted on $(date +"%d-%m-%Y %r" )" >> /data/.TeamSPR_test.log
 
 
 if [ "$($BB mount | grep rootfs | cut -c 26-27 | grep -c ro)" -eq "1" ]; then

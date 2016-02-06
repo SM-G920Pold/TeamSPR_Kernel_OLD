@@ -1,4 +1,5 @@
 # Modified from original apb_axel & neobuddy89 implementations by UpInTheAir@XDA for SkyHigh kernels
+# Modified by tvm2487 for TeamSPR Kernel
 
 BB=/sbin/busybox;
 
@@ -7,7 +8,7 @@ if [ "$($BB mount | grep rootfs | cut -c 26-27 | grep -c ro)" -eq "1" ]; then
 fi;
 
 if [ -d /data/data/com.af.synapse ]; then
-  SYNAPSE_SD_DIR=/sdcard/SkyHigh/Synapse;
+  SYNAPSE_SD_DIR=/sdcard/TeamSPR/Synapse;
   SYNAPSE_BOOT_DIR=$SYNAPSE_SD_DIR/kernel_backups;
   SYNAPSE_CONFIG_DIR=$SYNAPSE_SD_DIR/saved_configs;
 
@@ -52,15 +53,15 @@ case "$1" in
 	;;
 
 	keepboot)
-		BCK_PROF=$($BB cat /res/synapse/SkyHigh/bck_kernel);
+		BCK_PROF=$($BB cat /res/synapse/TeamSPR/bck_kernel);
 		BCK_PROF=$($BB echo "${BCK_PROF// /_}");
 	
 		if [ "$BCK_PROF" == "None" ]; then
 			$BB echo "Enter a kernel name first and then apply.";
 		else
 			$BB dd if="$2" of="$SYNAPSE_BOOT_DIR/$BCK_PROF.img" 2> /dev/null;
-			$BB echo "None" > /res/synapse/SkyHigh/bck_prof;
-			$BB echo "$BCK_PROF.img saved to /sdcard/SkyHigh. Press the [Restart Synapse] button below to see updated list.";
+			$BB echo "None" > /res/synapse/TeamSPR/bck_prof;
+			$BB echo "$BCK_PROF.img saved to /sdcard/TeamSPR. Press the [Restart Synapse] button below to see updated list.";
 		fi;
 	;;
 

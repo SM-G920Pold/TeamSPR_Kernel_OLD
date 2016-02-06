@@ -2,9 +2,10 @@
 
 # Fuel guage reset script
 # by UpInTheAir for SkyHigh kernels & Synapse
+# Modified by tvm2487 for TeamSPR kernels & Synapse
 
 BB=/sbin/busybox;
-P=/res/synapse/SkyHigh/cron_fg;
+P=/res/synapse/TeamSPR/cron_fg;
 FG_RESET=$(cat $P);
 
 if [ "$($BB mount | grep rootfs | cut -c 26-27 | grep -c ro)" -eq "1" ]; then

@@ -12,7 +12,7 @@ cat << CTAG
 	{ SLiveLabel:{
 		refresh:10000000,
 		style:"bold",
-		action:"echo Welcome to SkyHigh kernel !"
+		action:"echo Welcome to TeamSPR kernel !"
 	}},
 	{ SLiveLabel:{
 		refresh:10000000,
@@ -21,7 +21,7 @@ cat << CTAG
 	{ SLiveLabel:{
 		refresh:10000000,
 		style:"bold",
-		action:"echo UpInTheAir"
+		action:"echo tvm2487"
 	}},
 	{ SSpacer:{
 		height:1
@@ -35,8 +35,8 @@ cat << CTAG
 		height:1
 	}},
 	{ SButton:{
-		label:"SkyHigh kernel thread @ XDA-Developers",
-		action:"am start -a android.intent.action.VIEW -d http://forum.xda-developers.com/sprint-galaxy-note5/orig-development/kernel-skyhigh-tw-5-1-1-kernel-t3261675 > /dev/null;
+		label:"TeamSPR kernel thread @ XDA-Developers",
+		action:"am start -a android.intent.action.VIEW -d Not Uploaded Yet > /dev/null;
 		echo Opening browser...;"
 	}},
 	{ SSpacer:{

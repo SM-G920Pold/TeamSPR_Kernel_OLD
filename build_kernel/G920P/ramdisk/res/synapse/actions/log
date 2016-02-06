@@ -1,5 +1,5 @@
 TIMESTAMP=$(date +%Y-%m-%d.%H.%M.%S);
-LOGS=/sdcard/SkyHigh/Logs;
+LOGS=/sdcard/TeamSPR/Logs;
 
 [ ! -d "$LOGS" ] && mkdir -p "$LOGS";
 chmod 755 $LOGS

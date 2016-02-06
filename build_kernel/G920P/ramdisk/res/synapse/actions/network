@@ -1,4 +1,5 @@
 # By UpInTheAir for SkyHigh SM-N915S kernels
+# Modified by tvm2487 for TeamSPR Kernel
 
 BB=/sbin/busybox;
 
@@ -8,7 +9,7 @@ fi;
 
 case $1 in
 tcp_security)
-  P=/res/synapse/SkyHigh/tcp_security
+  P=/res/synapse/TeamSPR/tcp_security
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -61,7 +62,7 @@ tcp_security)
   fi
   ;;
 dns)
-  P=/res/synapse/SkyHigh/dns
+  P=/res/synapse/TeamSPR/dns
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -115,7 +116,7 @@ if [ "$($BB mount | grep system | grep -c ro)" -eq "1" ]; then
 	$BB mount -o remount,rw /system;
 fi;
 
-  P=/res/synapse/SkyHigh/gps_zone
+  P=/res/synapse/TeamSPR/gps_zone
   var_gps="/system/etc/gps.conf";
 
 # Backup original gps.conf in case of user revert.
@@ -226,7 +227,7 @@ fi;
 $BB mount -o remount,ro /system;
   ;;
 wifi_passwords_save)
-  WIFI=/sdcard/SkyHigh/wifi;
+  WIFI=/sdcard/TeamSPR/wifi;
   [ ! -d "$WIFI" ] && mkdir -p "$WIFI";
   chmod 755 $WIFI
   P=$WIFI/wifi.txt
@@ -235,11 +236,11 @@ wifi_passwords_save)
   echo WiFi Passwords saved
   ;;
 wifi_passwords_restore)
-  if [ -f /sdcard/SkyHigh/wifi/wifi.txt ]; then
+  if [ -f /sdcard/TeamSPR/wifi/wifi.txt ]; then
 	P=/data/misc/wifi/wpa_supplicant.conf
 	svc wifi disable 2> /dev/null;
 	rm -f /data/misc/dhcp/dhcpcd*;
-	cat /sdcard/SkyHigh/wifi/wifi.txt > $P
+	cat /sdcard/TeamSPR/wifi/wifi.txt > $P
 	$BB chmod 660 $P;
 	svc wifi enable 2> /dev/null;
 	sleep 1
@@ -249,7 +250,7 @@ wifi_passwords_restore)
   fi
   ;;
 IPv6)
-  P=/res/synapse/SkyHigh/IPv6
+  P=/res/synapse/TeamSPR/IPv6
   if [ ! -z $2 ]; then
   if [ $2 == Disabled ]; then
 	echo 0 > $P

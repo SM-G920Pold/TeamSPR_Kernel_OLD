@@ -1,7 +1,7 @@
 BB=/sbin/busybox;
 
 # SQLite log location
-LOGS=/sdcard/SkyHigh/Logs/SQLite.txt;
+LOGS=/sdcard/TeamSPR/Logs/SQLite.txt;
 
 if [ "$($BB mount | grep rootfs | cut -c 26-27 | grep -c ro)" -eq "1" ]; then
 	$BB mount -o remount,rw /;
@@ -47,7 +47,7 @@ case $1 in
 	fi;
 
 	# Create Log folder on sdcard
-	LOG=/sdcard/SkyHigh/Logs;
+	LOG=/sdcard/TeamSPR/Logs;
 
 	[ ! -d "$LOG" ] && mkdir -p "$LOG";
 	chmod 755 $LOG
@@ -139,7 +139,7 @@ case $1 in
 	echo "Clean up done";
   ;;
 scr_cache)
-  P=/res/synapse/SkyHigh/scr_cache
+  P=/res/synapse/TeamSPR/scr_cache
   if [ ! -z "$2" ]; then
   if [ "$2" == 0 ]; then
     echo 0 > $P
@@ -166,7 +166,7 @@ scr_cache)
   fi
   ;;
 spcm_service)
-  P=/res/synapse/SkyHigh/spcm_service
+  P=/res/synapse/TeamSPR/spcm_service
   if [ ! -z "$2" ]; then
   if [ "$2" == Enabled ]; then
     echo Enabled > $P

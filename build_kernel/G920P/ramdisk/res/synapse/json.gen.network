@@ -56,7 +56,7 @@ cat << CTAG
 	}},
 	{ SPane:{
 		title:"WiFi Passwords",
-		description:"Save or restore your WiFi Passwords in /sdcard/SkyHigh/wifi/ folder."
+		description:"Save or restore your WiFi Passwords in /sdcard/TeamSPR/wifi/ folder."
 	}},
 	{ SSpacer:{
 		height:1

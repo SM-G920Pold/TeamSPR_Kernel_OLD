@@ -1,5 +1,6 @@
 # By UpInTheAir for SkyHigh kernels
 # Interactive performance, battery & turbo values by g.lewarne @ XDA
+# Modified by tvm2487 for TeamSPR Kernel
 
 BB=/sbin/busybox;
 
@@ -9,7 +10,7 @@ fi;
 
 case $1 in
 hmp)
-  P=/res/synapse/SkyHigh/tuning_hmp
+  P=/res/synapse/TeamSPR/tuning_hmp
   if [ ! -z "$2" ]; then
   if [ "$2" == Default ]; then
 	chmod 0644 /sys/kernel/hmp/up_threshold;
@@ -46,7 +47,7 @@ hmp)
   fi
   ;;
 interactive_turbo)
-  P=/res/synapse/SkyHigh/tuning_interactive_turbo
+  P=/res/synapse/TeamSPR/tuning_interactive_turbo
   CPU0=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq);
   CPU4=$(cat /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_min_freq);
   if [ ! -z "$2" ]; then
@@ -71,7 +72,7 @@ interactive_turbo)
   fi
   ;;
 interactive_b)
-  P=/res/synapse/SkyHigh/tuning_interactive_b
+  P=/res/synapse/TeamSPR/tuning_interactive_b
   if [ ! -z "$2" ]; then
   if [ "$2" == Default ]; then
     echo 0 > $P
@@ -129,7 +130,7 @@ interactive_b)
   fi
   ;;
 interactive_L)
-  P=/res/synapse/SkyHigh/tuning_interactive_L
+  P=/res/synapse/TeamSPR/tuning_interactive_L
   if [ ! -z "$2" ]; then
   if [ "$2" == Default ]; then
     echo 0 > $P

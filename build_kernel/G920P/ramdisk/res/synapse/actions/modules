@@ -1,4 +1,5 @@
 # By UpInTheAir for SkyHigh kernels
+# Modified by tvm2487 for TeamSPR Kernel
 
 BB=/sbin/busybox;
 
@@ -11,7 +12,7 @@ fi;
 
 case $1 in
 cifs)
-  P=/res/synapse/SkyHigh/cifs
+  P=/res/synapse/TeamSPR/cifs
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -29,7 +30,7 @@ cifs)
   ;;
 
 ntfs)
-  P=/res/synapse/SkyHigh/ntfs
+  P=/res/synapse/TeamSPR/ntfs
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -47,7 +48,7 @@ ntfs)
   ;;
 
 isofs)
-  P=/res/synapse/SkyHigh/isofs
+  P=/res/synapse/TeamSPR/isofs
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -64,7 +65,7 @@ isofs)
   fi
   ;;
 udf)
-  P=/res/synapse/SkyHigh/udf
+  P=/res/synapse/TeamSPR/udf
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P
@@ -82,7 +83,7 @@ udf)
   ;;
 
 xpad)
-  P=/res/synapse/SkyHigh/xpad
+  P=/res/synapse/TeamSPR/xpad
   if [ ! -z "$2" ]; then
   if [ "$2" == Disabled ]; then
     echo 0 > $P

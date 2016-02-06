@@ -2,6 +2,7 @@
 
 # Created By Dorimanx and Dairinin
 # Modified by UpInTheAir for SkyHigh kernel & Synapse
+# Modified by tvm2487 for TeamSPR kernels & Synapse
 
 BB=/sbin/busybox;
 
@@ -117,7 +118,7 @@ chmod 777 /data/crontab/cron-scripts/*;
 
 # use /var/spool/cron/crontabs/ call the crontab file "root"
 if [ "$(pidof crond | wc -l)" -eq "0" ]; then
-	$BB nohup /system/xbin/crond -c /var/spool/cron/crontabs/ > /data/.SkyHigh/cron.txt &
+	$BB nohup /system/xbin/crond -c /var/spool/cron/crontabs/ > /data/.TeamSPR/cron.txt &
 	sleep 1;
 	PIDOFCRON=$(pidof crond);
 	echo "-900" > /proc/"$PIDOFCRON"/oom_score_adj;
