@@ -164,7 +164,7 @@ cd ${KERNELDIR}/output/$TARGET
 GETVER=`grep 'TeamSPR_Kernel_*v' ${KERNELDIR}/.config | sed 's/.*".//g' | sed 's/-S.*//g'`
 
 zip -r SM-$TARGET-kernel-${GETVER}-`date +[%y-%m-%d]`.zip .
-tar -H ustar -c ./boot.img > SM-$TARGET-kernel-${GETVER}-`date +[%y-%m-%d]`.tar
+tar -H ustar -c boot.img > SM-$TARGET-kernel-${GETVER}-`date +[%y-%m-%d]`.tar
 md5sum -t SM-$TARGET-kernel-${GETVER}-`date +[%y-%m-%d]`.tar >> SM-$TARGET-kernel-${GETVER}-`date +[%y-%m-%d]`.tar
 mv SM-$TARGET-kernel-${GETVER}-`date +[%y-%m-%d]`.tar SM-$TARGET-kernel-${GETVER}-`date +[%y-%m-%d]`.tar.md5
 
